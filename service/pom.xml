@@ -35,6 +35,14 @@
             <scope>provided</scope>
         </dependency>
 
+        <!--org.acme.repository dependent modules must include this dependency, otherwise they will not compile-->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-hibernate-orm-panache</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- -->
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

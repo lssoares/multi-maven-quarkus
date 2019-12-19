@@ -1,4 +1,6 @@
-package org.acme;
+package org.acme.service.example;
+
+import org.acme.repository.example.ExampleRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

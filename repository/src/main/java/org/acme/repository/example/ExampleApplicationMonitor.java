@@ -1,4 +1,4 @@
-package org.acme;
+package org.acme.repository.example;
 
 import io.quarkus.runtime.ShutdownEvent;
 import io.quarkus.runtime.StartupEvent;
@@ -17,9 +17,9 @@ import java.sql.Statement;
  * @author leandrosoares
  */
 @ApplicationScoped
-public class ApplicationMonitor {
+public class ExampleApplicationMonitor {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationMonitor.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExampleApplicationMonitor.class);
 
     Server server;
 

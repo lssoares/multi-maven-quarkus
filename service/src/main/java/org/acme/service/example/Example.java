@@ -1,4 +1,4 @@
-package org.acme;
+package org.acme.service.example;
 
 import lombok.Data;
 import lombok.Getter;

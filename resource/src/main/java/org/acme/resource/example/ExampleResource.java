@@ -1,5 +1,8 @@
-package org.acme;
+package org.acme.resource.example;
 
+import org.acme.resource.base.RestErrorMessage;
+import org.acme.service.example.Example;
+import org.acme.service.example.ExampleService;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;

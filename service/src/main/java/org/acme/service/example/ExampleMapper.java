@@ -2,8 +2,9 @@
  * Prozis Tech Copyright (c) 2019.
  */
 
-package org.acme;
+package org.acme.service.example;
 
+import org.acme.repository.example.ExampleEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
