@@ -1,15 +1,11 @@
 package org.acme;
 
 import io.quarkus.test.junit.QuarkusTest;
-import lombok.experimental.Delegate;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Instance;
 import javax.enterprise.inject.spi.CDI;
-import javax.inject.Inject;
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Objects;
 
@@ -17,16 +13,16 @@ import java.util.Objects;
  * @author leandrosoares
  */
 @QuarkusTest
-public class ExampleRepositoryTest {
+public class ExampleServiceTest {
 
     /*
     @Inject
-    ExampleRepositoryWrapper exampleRepository;
+    ExampleServiceWrapper exampleService;
 
     @Test
     public void getList() {
 
-        List<ExampleEntity> list = exampleRepository.listAll();
+        List<ExampleEntity> list = exampleService.listAll();
         Assertions.assertTrue(Objects.nonNull(list) && list.size() > 0);
 
     }
@@ -36,10 +32,10 @@ public class ExampleRepositoryTest {
     // Workaround to fix https://github.com/quarkusio/quarkus/issues/1724.
     @ApplicationScoped
     @Transactional
-    static class ExampleRepositoryWrapper {
+    static class ExampleServiceWrapper {
         @Inject
         @Delegate
-        ExampleRepository exampleRepository;
+        ExampleService exampleService;
 
     }
     */
@@ -48,14 +44,14 @@ public class ExampleRepositoryTest {
     @Test
     public void getList() {
 
-        Instance<ExampleRepository> exampleRepositoryInstance = CDI.current().select(ExampleRepository.class);
-        ExampleRepository exampleRepository = exampleRepositoryInstance.get();
+        Instance<ExampleService> exampleServiceInstance = CDI.current().select(ExampleService.class);
+        ExampleService exampleService = exampleServiceInstance.get();
 
-        List<ExampleEntity> list = exampleRepository.listAll();
+        List<Example> list = exampleService.listAll();
         Assertions.assertTrue(Objects.nonNull(list) && list.size() > 0);
 
 
-        CDI.current().destroy(exampleRepositoryInstance);
+        CDI.current().destroy(exampleServiceInstance);
     }
 
 

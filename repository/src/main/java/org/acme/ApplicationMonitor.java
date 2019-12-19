@@ -26,7 +26,7 @@ public class ApplicationMonitor {
     void onStart(@Observes StartupEvent event) {
 
         try {
-            starth2();
+            startH2();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -41,7 +41,7 @@ public class ApplicationMonitor {
     }
 
 
-    private void starth2() throws SQLException, ClassNotFoundException {
+    private void startH2() throws SQLException, ClassNotFoundException {
         server = Server.createTcpServer("-tcpAllowOthers").start();
         Class.forName("org.h2.Driver");
         Connection conn = DriverManager.
