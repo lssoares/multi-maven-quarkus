@@ -48,14 +48,17 @@
         <dependency>
             <groupId>org.acme</groupId>
             <artifactId>repository</artifactId>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.acme</groupId>
             <artifactId>service</artifactId>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.acme</groupId>
             <artifactId>resource</artifactId>
+            <scope>compile</scope>
         </dependency>
 
 
