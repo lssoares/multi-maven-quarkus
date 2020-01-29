@@ -25,4 +25,12 @@ public class ExampleService {
                 .collect(toList());
     }
 
+    public String annotationsTest() {
+        try {
+            Thread.sleep(3000);
+            return "I waited long enough";
+        } catch (InterruptedException e) {
+            return "Exception caught";
+        }
+    }
 }

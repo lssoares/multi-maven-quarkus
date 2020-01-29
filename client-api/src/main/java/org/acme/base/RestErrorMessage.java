@@ -2,7 +2,7 @@
  * Prozis Tech Copyright (c) 2019.
  */
 
-package org.acme.resource.base;
+package org.acme.base;
 
 
 import lombok.AllArgsConstructor;

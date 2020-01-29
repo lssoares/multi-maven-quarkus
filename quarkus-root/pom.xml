@@ -47,6 +47,11 @@
 
         <dependency>
             <groupId>org.acme</groupId>
+            <artifactId>client-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.acme</groupId>
             <artifactId>repository</artifactId>
             <scope>compile</scope>
         </dependency>
