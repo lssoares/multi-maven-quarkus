@@ -16,7 +16,7 @@ import java.util.Objects;
 /**
  * @author leandrosoares
  */
-@QuarkusTest
+//@QuarkusTest
 public class ExampleRepositoryTest {
 
     /*
@@ -38,7 +38,7 @@ public class ExampleRepositoryTest {
     */
 
 
-    @Test
+    //@Test
     public void getList() {
 
         Instance<ExampleRepository> exampleRepositoryInstance = CDI.current().select(ExampleRepository.class);

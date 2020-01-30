@@ -4,6 +4,7 @@ import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
+import javax.ws.rs.core.Response;
 
 import static io.restassured.RestAssured.given;
 
@@ -13,7 +14,7 @@ import static io.restassured.RestAssured.given;
 @QuarkusTest
 public class ExampleResourceTest {
 
-    @Test
+    //@Test
     public void getList() {
 
         given()
@@ -24,14 +25,27 @@ public class ExampleResourceTest {
     }
 
 
-    @Test
-    void testWs() {
+    //@Test
+    void testAnnotationOnInterface() {
 
         given()
                 .when()
-                .get("/examples/testAnnotations")
+                .get("/examples/testAnnotationOnInterface")
                 .then()
-                .statusCode(500);
+                .statusCode(Response.Status.REQUEST_TIMEOUT.getStatusCode());
 
     }
+
+
+    //@Test
+    void testAnnotationOnImplementation() {
+
+        given()
+                .when()
+                .get("/examples/testAnnotationOnImplementation")
+                .then()
+                .statusCode(Response.Status.REQUEST_TIMEOUT.getStatusCode());
+
+    }
+
 }

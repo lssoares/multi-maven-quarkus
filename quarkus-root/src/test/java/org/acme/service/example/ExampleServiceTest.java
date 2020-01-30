@@ -34,7 +34,7 @@ public class ExampleServiceTest {
     */
 
 
-    @Test
+    //@Test
     public void getList() {
 
         Instance<ExampleService> exampleServiceInstance = CDI.current().select(ExampleService.class);

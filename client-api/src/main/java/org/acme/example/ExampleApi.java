@@ -49,10 +49,10 @@ public interface ExampleApi {
     Response list();
 
     @GET
-    @Path("testAnnotations")
+    @Path("testAnnotationOnInterface")
     @Operation(
-            operationId = "GetExamples",
-            summary = "List all Examples"
+            operationId = "TestAnnotationOnInterface",
+            summary = "Timeout and Circuit Breaker are declared on interface."
     )
     @Timeout(1000)
     @CircuitBreaker(requestVolumeThreshold = 5, failureRatio = 1, delay = 60000)
@@ -68,5 +68,31 @@ public interface ExampleApi {
             content = @Content(mediaType = APPLICATION_JSON,
                     schema = @Schema(type = OBJECT,
                             implementation = RestErrorMessage.class)))
-    Response testWs();
+    Response testAnnotationOnInterfaceWs();
+
+
+
+
+    @GET
+    @Path("testAnnotationOnImplementation")
+    @Operation(
+            operationId = "TestAnnotationOnImplementation",
+            summary = "Timeout and Circuit Breaker are declared on implementation."
+    )
+    @Timeout(1000)
+    @CircuitBreaker(requestVolumeThreshold = 2, failureRatio = 0.5, delay = 10000, successThreshold = 1)
+    @APIResponse(responseCode = "200",
+            content = @Content(mediaType = APPLICATION_JSON,
+                    schema = @Schema(type = ARRAY,
+                            implementation = Example.class)))
+    @APIResponse(responseCode = "404",
+            content = @Content(mediaType = APPLICATION_JSON,
+                    schema = @Schema(type = OBJECT,
+                            implementation = RestErrorMessage.class)))
+    @APIResponse(responseCode = "500",
+            content = @Content(mediaType = APPLICATION_JSON,
+                    schema = @Schema(type = OBJECT,
+                            implementation = RestErrorMessage.class)))
+    Response testAnnotationOnImplementationWs();
+
 }

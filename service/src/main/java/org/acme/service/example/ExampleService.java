@@ -4,6 +4,7 @@ import org.acme.repository.example.ExampleRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import java.rmi.UnexpectedException;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
@@ -26,11 +27,18 @@ public class ExampleService {
     }
 
     public String annotationsTest() {
+        int waitTimeInMilis = 3000;
         try {
-            Thread.sleep(3000);
-            return "I waited long enough";
+            Thread.sleep(waitTimeInMilis);
+            StringBuilder sb = new StringBuilder()
+                    .append("I waited for ")
+                    .append(waitTimeInMilis)
+                    .append(" miliseconds at least....Timeout shouuld happen after 1 second.")
+                    .append(" I hope next time, circuit breaker will act!");
+
+            throw new RuntimeException(sb.toString());
         } catch (InterruptedException e) {
-            return "Exception caught";
+            return e.getMessage();
         }
     }
 }
