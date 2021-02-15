@@ -1,6 +1,8 @@
 # Multi-Maven-Quarkus
 Project to reproduce Multi module maven project based on Quarkus
 
+## See proposal on https://github.com/quarkusio/quarkus/issues/6266
+
 ## Modules
 
 ### quarkus-root
