@@ -1,4 +1,4 @@
-package org.acme.resource.example;
+package org.acme.test.resource;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;

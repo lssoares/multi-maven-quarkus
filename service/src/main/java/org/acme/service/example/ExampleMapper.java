@@ -1,7 +1,3 @@
-/*
- * Prozis Tech Copyright (c) 2019.
- */
-
 package org.acme.service.example;
 
 import org.acme.repository.example.ExampleEntity;
