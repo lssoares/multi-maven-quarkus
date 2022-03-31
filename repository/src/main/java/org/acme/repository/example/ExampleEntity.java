@@ -1,6 +1,7 @@
 package org.acme.repository.example;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -10,7 +11,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "example")
+@Data
 public class ExampleEntity extends PanacheEntity {
 
-    public String code;
+    private String code;
 }

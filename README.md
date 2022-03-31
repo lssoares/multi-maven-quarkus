@@ -8,11 +8,9 @@ Project to reproduce Multi module maven project based on Quarkus
 ### quarkus-root
 This module contains the quarkus maven plugin, all the required dependencies, and all the @quarkusTest
 
-This of it as a EAR or WAR, that packages all dependencies required to run the project.
+Integration tests are located on quarkus-root module for not having to deal with dependency inheritance... this way we're testing using the same dependencies available in runtime.
+Unit testing should use mocking for accessing other modules, and must be placed on the correct module.
 
-Tests are located on this modules for not having to deal with dependency inheritance... this way we're testing using the same dependencies available in runtime.
-
-The only logic for organizing tests, is to maintain them on the same package as the access class they propose to test. 
 
 ### repository
 Handles data access. 
@@ -40,7 +38,7 @@ Delivers RESTful endpoints for dealing with business entities (resources).
 Open a browser and navigate to:
  
 ```
-http://0.0.0.0:8080/swagger-ui
+http://0.0.0.0:8080/q/swagger-ui
 ```
 
 Use the interactive swagger interface to execute the web service.
